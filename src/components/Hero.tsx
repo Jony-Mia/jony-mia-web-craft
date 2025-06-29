@@ -23,7 +23,7 @@ const Hero = () => {
             })}>
                 Get In Touch
               </Button>
-              <Button size="lg" variant="outline" onClick={handlePortfolioClick} className="border-white hover:bg-white px-8 py-3 text-lg text-slate-600">
+              <Button size="lg" variant="outline" onClick={handlePortfolioClick} className="border-white hover:bg-gray-100 px-8 py-3 text-lg text-slate-600">
                 View Portfolio
               </Button>
             </div>
