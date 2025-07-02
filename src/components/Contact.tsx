@@ -57,8 +57,12 @@ const Contact = () => {
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/15 transition-all">
-              <div className="w-12 h-12 bg-purple-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">P</span>
+              <div className="w-12 h-12 rounded-full overflow-hidden mx-auto mb-4 border-2 border-purple-400">
+                <img 
+                  src="/lovable-uploads/fda80385-0418-4962-a190-3156fe30c3fa.png" 
+                  alt="Jony Mia" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-2">Portfolio</h3>
               <p className="text-gray-300 mb-4">jony-mia.ct.ws</p>
