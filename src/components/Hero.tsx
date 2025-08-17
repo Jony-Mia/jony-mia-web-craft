@@ -28,7 +28,6 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          
           <div className="flex-shrink-0">
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl">
