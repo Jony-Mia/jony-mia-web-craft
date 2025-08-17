@@ -65,7 +65,7 @@ const Contact = () => {
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">Portfolio</h3>
-              <p className="text-gray-300 mb-4">jony-mia.ct.ws</p>
+              <p className="text-gray-300 mb-4">jonymia.netlify.app</p>
               <Button 
                 variant="outline" 
                 className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white"
