@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 const Hero = () => {
   const handlePortfolioClick = () => {
-    window.open('http://jony-mia.ct.ws', '_blank', 'noopener,noreferrer');
+    window.open('https://jonymia.netlify.app', '_blank', 'noopener,noreferrer');
   };
   return <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
       <div className="container mx-auto px-6 py-20">
