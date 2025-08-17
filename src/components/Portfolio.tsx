@@ -33,7 +33,7 @@ const Portfolio = () => {
       category: "Health E-commerce",
       link: "https://solutionbd.top/"
     },
-    {
+    /*{
       id: 4,
       title: "Restaurant Website",
       description: "Beautiful restaurant website with online ordering and reservation system",
@@ -56,7 +56,7 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop&crop=entropy&auto=format",
       technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
       category: "WordPress Development"
-    }
+    }*/
   ];
 
   return (
