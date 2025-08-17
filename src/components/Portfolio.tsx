@@ -2,6 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import babiesHavenPreview from "@/assets/babieshavenbd-preview.png";
 import fastitcarePreview from "@/assets/fastitcare-preview.png";
+import solutionbdPreview from "@/assets/solutionbd-preview.png";
 
 const Portfolio = () => {
   const projects = [
@@ -25,11 +26,12 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      title: "React Web Application",
-      description: "Modern single-page application built with React and advanced state management",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop&crop=entropy&auto=format",
-      technologies: ["React", "JavaScript", "API Integration", "Responsive"],
-      category: "React Development"
+      title: "Solution BD",
+      description: "Health product e-commerce site specializing in hair loss treatment solutions with Minoxidil",
+      image: solutionbdPreview,
+      technologies: ["WordPress", "E-commerce", "Health Products", "Bengali"],
+      category: "Health E-commerce",
+      link: "https://solutionbd.top/"
     },
     {
       id: 4,
