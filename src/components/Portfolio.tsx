@@ -1,5 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import babiesHavenPreview from "@/assets/babieshavenbd-preview.png";
 
 const Portfolio = () => {
   const projects = [
@@ -7,7 +8,7 @@ const Portfolio = () => {
       id: 1,
       title: "Babies Haven BD",
       description: "Complete e-commerce solution for baby products with WooCommerce integration and custom design",
-      image: "/lovable-uploads/fda80385-0418-4962-a190-3156fe30c3fa.png",
+      image: babiesHavenPreview,
       technologies: ["WordPress", "WooCommerce", "PHP", "E-commerce"],
       category: "E-commerce Development",
       link: "https://babieshavenbd.com"
