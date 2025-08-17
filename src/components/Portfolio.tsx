@@ -5,11 +5,12 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Website",
-      description: "Modern WordPress e-commerce solution with custom theme and WooCommerce integration",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=entropy&auto=format",
-      technologies: ["WordPress", "WooCommerce", "PHP", "Custom Theme"],
-      category: "WordPress Development"
+      title: "Babies Haven BD",
+      description: "Complete e-commerce solution for baby products with WooCommerce integration and custom design",
+      image: "/lovable-uploads/fda80385-0418-4962-a190-3156fe30c3fa.png",
+      technologies: ["WordPress", "WooCommerce", "PHP", "E-commerce"],
+      category: "E-commerce Development",
+      link: "https://babieshavenbd.com"
     },
     {
       id: 2,
@@ -70,7 +71,11 @@ const Portfolio = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-0 shadow-lg">
+              <Card 
+                key={project.id} 
+                className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-0 shadow-lg cursor-pointer"
+                onClick={() => project.link && window.open(project.link, '_blank')}
+              >
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
                     src={project.image} 
@@ -82,6 +87,15 @@ const Portfolio = () => {
                       {project.category}
                     </span>
                   </div>
+                  {project.link && (
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full">
+                        <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <CardHeader className="pb-3">
                   <CardTitle className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
