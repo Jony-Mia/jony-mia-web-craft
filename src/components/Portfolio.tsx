@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import babiesHavenPreview from "@/assets/babieshavenbd-preview.png";
+import fastitcarePreview from "@/assets/fastitcare-preview.png";
 
 const Portfolio = () => {
   const projects = [
@@ -15,11 +16,12 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      title: "Corporate Business Site",
-      description: "Professional corporate website with custom WordPress theme and advanced functionality",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=entropy&auto=format",
-      technologies: ["WordPress", "PHP", "MySQL", "Responsive Design"],
-      category: "WordPress Development"
+      title: "FastIT Care",
+      description: "Professional web design service website with Bengali language support and modern UI",
+      image: fastitcarePreview,
+      technologies: ["WordPress", "Custom Design", "Multilingual", "Professional"],
+      category: "Web Design Services",
+      link: "https://fastitcare.com"
     },
     {
       id: 3,
