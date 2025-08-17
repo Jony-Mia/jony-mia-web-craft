@@ -66,7 +66,7 @@ const Skills = () => {
 
               <div className="mt-8 grid grid-cols-2 gap-6">
                 <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">1+</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">2</div>
                   <div className="text-gray-600">Years Experience</div>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-sm text-center">
