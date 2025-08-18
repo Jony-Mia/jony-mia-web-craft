@@ -1,8 +1,11 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import babiesHavenPreview from "@/assets/babieshavenbd-preview.png";
-import fastitcarePreview from "@/assets/fastitcare-preview.png";
-import solutionbdPreview from "@/assets/solutionbd-preview.png";
+import fastitcarePreview from "@/assets/image2.png";
+import solutionbdPreview from "@/assets/image3.png";
+import perfume from "@/assets/image4.png";
+import qibla from "@/assets/image1.png";
+import watch from "@/assets/image.png";
 
 const Portfolio = () => {
   const projects = [
@@ -12,7 +15,7 @@ const Portfolio = () => {
       description: "Complete e-commerce solution for baby products with WooCommerce integration and custom design",
       image: babiesHavenPreview,
       technologies: ["WordPress", "WooCommerce", "PHP", "E-commerce"],
-      category: "E-commerce Development",
+      category: "E-commerce Website",
       link: "https://babieshavenbd.com"
     },
     {
@@ -27,37 +30,43 @@ const Portfolio = () => {
     {
       id: 3,
       title: "Solution BD",
-      description: "Health product e-commerce site specializing in hair loss treatment solutions with Minoxidil",
+      description: "Health product e-commerce landing page specializing in hair loss treatment solutions with Minoxidil",
       image: solutionbdPreview,
       technologies: ["WordPress", "E-commerce", "Health Products", "Bengali"],
       category: "Health E-commerce",
-      link: "https://solutionbd.top/"
-    },
-    /*{
-    
-      id: 4,
-      title: "Restaurant Website",
-      description: "Beautiful restaurant website with online ordering and reservation system",
-      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop&crop=entropy&auto=format",
-      technologies: ["WordPress", "Custom Plugin", "PHP", "JavaScript"],
-      category: "WordPress Development"
+      link: "https://solutionbd.top"
     },
     {
+    
+      id: 4,
+      title: "Ecommerce Website",
+      description: "Beautiful website with many features increasing user web experience.",
+      image: qibla,
+      technologies: ["WordPress", " Plugin", "PHP"],
+      category: "WordPress Development",
+      link: "https://qiblaa.com"
+
+    },
+    
+    {
       id: 5,
-      title: "Portfolio Dashboard",
-      description: "Interactive dashboard for managing portfolio content with React and modern UI",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=entropy&auto=format",
-      technologies: ["React", "TypeScript", "Dashboard UI", "Data Visualization"],
-      category: "React Development"
+      title: "Ecommerce Website",
+      description: "Complete e-commerce solution for perfumes and fragnants products with WooCommerce integration and custom design",
+      image: perfume,
+      technologies: ["WordPress", "WooCommerce","Woodmart"],
+      category: "Wordpress Development",
+      link: "https://divinearomabd.com"
+
     },
     {
       id: 6,
-      title: "Blog Platform",
-      description: "Custom WordPress blog platform with advanced content management features",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop&crop=entropy&auto=format",
+      title: "Landing Page for watch",
+      description: "Here I build a high qualityful landing page for my client business.",
+      image: watch,
       technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
-      category: "WordPress Development"
-    }*/
+      category: "WordPress Development",
+      link:"https://orlolife.xyz"
+    }
   ];
 
   return (
