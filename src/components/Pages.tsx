@@ -23,7 +23,7 @@ const pricingTiers: PricingTier[] = [
 	},
 	{
 		name: 'Business Website',
-		price: '$499',
+		price: '$399',
 		features: [
 			'Up to 10 Pages (React or WordPress)',
 			'Custom Theme/Design',
