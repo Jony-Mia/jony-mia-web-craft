@@ -20,6 +20,7 @@ const Header = () => {
             <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
             <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
             <a href="#skills" className="text-gray-700 hover:text-blue-600 transition-colors">Skills</a>
+            <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">Pricing</a>
             <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
           </div>
 
@@ -39,6 +40,7 @@ const Header = () => {
               <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Home</a>
               <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors" onClick={toggleMenu}>About</a>
               <a href="#skills" className="text-gray-700 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Skills</a>
+              <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Pricing</a>
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Contact</a>
             </div>
           </div>

@@ -52,9 +52,9 @@ const pricingTiers: PricingTier[] = [
 
 export default function Pages() {
 	return (
-		<div className="min-h-screen m-auto flex flex-col bg-background">
+		<div id="pricing" className="min-h-screen my-20 m-auto flex flex-col bg-background">
 			<Header />
-			<main className="flex w-full flex-wrap max-w-7xl mx-auto p-4 md:p-8">
+			<main className="flex w-full flex-wrap py-20 max-w-7xl mx-auto p-4 md:p-8">
 				<div className="w-full">
 					<section id="about" className="max-w-3xl mx-auto mb-10 scroll-mt-24">
 						<h2 className="text-3xl font-bold mb-4 tracking-tight text-center">About My Web Development Services</h2>
