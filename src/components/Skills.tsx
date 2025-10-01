@@ -1,16 +1,17 @@
 
 const Skills = () => {
   const skills = [
-    { name: "WordPress", level: 95, color: "bg-blue-600" },
-    { name: "PHP", level: 90, color: "bg-purple-600" },
-    { name: "React.js", level: 85, color: "bg-cyan-600" },
-    { name: "JavaScript", level: 88, color: "bg-yellow-500" },
     { name: "HTML/CSS", level: 92, color: "bg-orange-500" },
+    { name: "JavaScript", level: 88, color: "bg-yellow-500" },
+    { name: "React.js", level: 85, color: "bg-cyan-600" },
+    { name: "PHP", level: 90, color: "bg-purple-600" },
     { name: "MySQL", level: 80, color: "bg-green-600" },
+    { name: "WordPress", level: 95, color: "bg-blue-600" },
+    { name: "Laravel", level: 65, color: "bg-pink-600" },
   ];
 
   const technologies = [
-    "WordPress", "PHP", "React.js", "JavaScript", "HTML5", "CSS3",
+    "WordPress", "PHP","Laravel", "React.js", "JavaScript", "HTML5", "CSS3",
     "MySQL", "jQuery", "Bootstrap", "Tailwind CSS", "Git", "REST API"
   ];
 
@@ -70,8 +71,12 @@ const Skills = () => {
                   <div className="text-gray-600">Years Experience</div>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-2">75+</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">500+</div>
                   <div className="text-gray-600">Projects Completed</div>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                  <div className="text-3xl font-bold text-green-600 mb-2">5/5</div>
+                  <div className="text-gray-600">Ratings</div>
                 </div>
               </div>
             </div>

@@ -16,12 +16,12 @@ const Header = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-            <a href="#skills" className="text-gray-700 hover:text-blue-600 transition-colors">Skills</a>
-            <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">Pricing</a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+          <div className="hidden md:flex items-center space-x-3">
+            <a href="#home" className="text-gray-700 hover:text-white hover:bg-[#34a9ed] p-3  m-0 px-5 rounded-full py-2.5   ansition-colors">Home</a>
+            <a href="#about" className="text-gray-700 hover:text-white hover:bg-[#34a9ed] p-3  m-0 px-5 rounded-full py-2.5 ransition-colors">About</a>
+            <a href="#skills" className="text-gray-700  hover:text-white hover:bg-[#34a9ed] p-3 m-0 px-5 rounded-full py-2.5 transition-colors">Skills</a>
+            <a href="#pricing" className="text-gray-700 hover:text-white hover:bg-[#34a9ed] p-3 m-0 px-5 rounded-full py-2.5   transition-colors">Pricing</a>
+            <a href="#contact" className="text-gray-700 hover:text-white hover:bg-[#34a9ed] p-3 m-0 px-5 rounded-full py-2.5 transition-colors">Contact</a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -36,12 +36,12 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
-            <div className="flex flex-col space-y-4 pt-4">
-              <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Home</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors" onClick={toggleMenu}>About</a>
-              <a href="#skills" className="text-gray-700 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Skills</a>
-              <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Pricing</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Contact</a>
+            <div className="flex flex-col  pt-4">
+              <a href="#home" className="text-gray-700  hover:text-white hover:bg-[#34a9ed] p-3 transition-colors" onClick={toggleMenu}>Home</a>
+              <a href="#about" className="text-gray-700 hover:text-white hover:bg-[#34a9ed] p-3  transition-colors" onClick={toggleMenu}>About</a>
+              <a href="#skills" className="text-gray-700 hover:text-white hover:bg-[#34a9ed] p-3  transition-colors" onClick={toggleMenu}>Skills</a>
+              <a href="#pricing" className="text-gray-700 hover:text-white hover:bg-[#34a9ed] p-3  transition-colors" onClick={toggleMenu}>Pricing</a>
+              <a href="#contact" className="text-gray-700 hover:text-white hover:bg-[#34a9ed] p-3  transition-colors" onClick={toggleMenu}>Contact</a>
             </div>
           </div>
         )}

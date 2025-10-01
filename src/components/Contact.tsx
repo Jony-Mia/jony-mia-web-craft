@@ -12,7 +12,7 @@ const Contact = () => {
   };
 
   const handlePortfolioClick = () => {
-    window.open("https://jonymia.netlify.app", "_blank");
+    window.location.href="#portfolio";
   };
 
   return (
