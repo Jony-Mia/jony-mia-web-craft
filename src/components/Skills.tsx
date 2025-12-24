@@ -4,22 +4,22 @@ import {
   CircularProgressbarWithChildren,
 } from "react-circular-progressbar";
 
-import Html from ''
+
 import "react-circular-progressbar/dist/styles.css";
 const Skills = () => {
   let skills = [
-    { name: "HTML/CSS", level: 92, color: "#f97316", tech: 'src/assets/img/html-5.png' },
-    { name: "CSS", level: 80, color: "#004ce8", tech: 'src/assets/img/css-3.png' },
-    { name: "TailwindCSS", level: 90, color: "#35bef8", tech: 'src/assets/img/apple-touch-icon.png' },
-    { name: "JavaScript", level: 88, color: "#ffdf00", tech: 'src/assets/img/js.png' },
-    { name: "React.js", level: 85, color: "#60b3f6", tech: 'src/assets/img/programing.png' },
-    { name: "PHP", level: 90, color: "#777bb3", tech: 'src/assets/img/php.png' },
-    { name: "MySQL", level: 80, color: "#16a34a", tech: 'src/assets/img/mysql.png' },
-    { name: "WordPress", level: 95, color: "#00769d", tech: 'src/assets/img/wordpress.png' },
+    { name: "HTML/CSS", level: 92, color: "#f97316", tech: '/src/assets/img/html-5.png' },
+    { name: "CSS", level: 80, color: "#004ce8", tech: '/src/assets/img/css-3.png' },
+    { name: "TailwindCSS", level: 90, color: "#35bef8", tech: '/src/assets/img/apple-touch-icon.png' },
+    { name: "JavaScript", level: 88, color: "#ffdf00", tech: '/src/assets/img/js.png' },
+    { name: "React.js", level: 85, color: "#60b3f6", tech: '/src/assets/img/programing.png' },
+    { name: "PHP", level: 90, color: "#777bb3", tech: '/src/assets/img/php.png' },
+    { name: "MySQL", level: 80, color: "#16a34a", tech: '/src/assets/img/mysql.png' },
+    { name: "WordPress", level: 95, color: "#00769d", tech: '/src/assets/img/wordpress.png' },
     // { name: "Laravel", level: 65, color: "#db2777", tech:'src/assets/img/html-5.png' },
-    { name: "Elementor", level: 92, color: "#ab003a",tech:'src/assets/img/5968699.png' },
-    { name: "WooCommerce", level: 92, color: "#7f54b3",tech:'src/assets/img/woocommerce-icon-svgrepo-com.svg' },
-    { name: "PhotoShop", level: 92, color: "#f97316",tech:'src/assets/img/photoshop.png' },
+    { name: "Elementor", level: 92, color: "#ab003a",tech:'/src/assets/img/5968699.png' },
+    { name: "WooCommerce", level: 92, color: "#7f54b3",tech:'/src/assets/img/woocommerce-icon-svgrepo-com.svg' },
+    { name: "PhotoShop", level: 92, color: "#f97316",tech:'/src/assets/img/photoshop.png' },
   ];
   let tools = [
     { name: "PhotoSho[", level: 92, color: "#f97316",tech:'src/assets/img/wordpress.png' },
@@ -29,9 +29,7 @@ const Skills = () => {
     { name: "WooCommerce", level: 80, color: "#16a34a" },
 
   ];
-  const skillImg = [
-    { img: '' }
-  ]
+
   const technologies = [
     "WordPress",
     "PHP",
@@ -68,7 +66,7 @@ const Skills = () => {
                 Technical Proficiency
               </h3> */}
 
-<div className="grid bg-red-400  lg:grid-cols-2 gap-12 mb-1">
+          <div className="grid bg-red-400  lg:grid-cols-2 gap-12 mb-1">
             <div className="">
               <div className="space-y-6  m-auto  ">
               
@@ -107,7 +105,7 @@ const Skills = () => {
                           <p style={{ fontSize: '14px' }} className="text-center ">
                             <span style={{ color: circle.color, fontWeight: 'bolder' }} >
                               <div style={{ width: '35px',display:'flex', placeContent:'center',margin:'auto'}}>
-                                <img height={50} src={circle.tech} />
+                                <img height={50} alt={circle.name} src={circle.tech} />
                               </div>
                             </span>
                               {circle.name}
