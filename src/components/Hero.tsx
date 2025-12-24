@@ -18,7 +18,7 @@ const Hero = () => {
             <h2 className="text-3xl md:text-2xl mt-[-20px] text-blue-200 mb-6 font-normal">
               Web Developer & Ecommerce Expert
             </h2>
-            <p className="text-lg lg:text-[18px]  w-[80%] text-gray-300 mb-8 max-w-2xl leading-snug">
+            <p className="text-lg lg:text-[18px] text-center  w-[80%] text-gray-300 mb-8 max-w-2xl leading-snug">
               I am passionate web developer specializing in WordPress, PHP, React, and modern web technologies.
               I create beautiful, functional websites that deliver exceptional user experiences. I am also a ecommerce  expert. I developed website for attract more customers for your business.
             </p>
@@ -51,7 +51,7 @@ const Hero = () => {
               </div>
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-20 blur-lg"></div>
             </div>
-          </div>,
+          </div>
         </div>
         <div className="mt-50px]">
 
