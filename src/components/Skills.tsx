@@ -135,8 +135,8 @@ const Skills = () => {
 
 
               {/* Mobile Menu */}
-          <div className="grid bg-white rounded-xl md:hidden lg:grid-cols-2 gap-12 mb-1">
-            <div className="">
+          <div style={{  boxShadow:'0 0 2px gray'}} className="grid bg-white rounded-xl   lg:grid-cols-2 gap-12 mb-1">
+            <div className="p-2">
               <div className="  m-auto  ">
               
 
@@ -149,9 +149,10 @@ const Skills = () => {
                     gridTemplateColumns: "repeat(3,auto)",
                     gap: " 10px",
                     margin: 'auto',
+                  
 
                   }}
-                  className=""
+                  className="p-3"
                 >
                   {skills.map((circle) => {
                     return (
