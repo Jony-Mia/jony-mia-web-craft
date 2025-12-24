@@ -135,7 +135,7 @@ const Skills = () => {
 
 
               {/* Mobile Menu */}
-          <div className="grid bg-red-400 md:hidden lg:grid-cols-2 gap-12 mb-1">
+          <div className="grid bg-white rounded-xl md:hidden lg:grid-cols-2 gap-12 mb-1">
             <div className="">
               <div className="  m-auto  ">
               
