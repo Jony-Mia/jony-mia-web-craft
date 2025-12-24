@@ -7,7 +7,8 @@ const Hero = () => {
     behavior:'smooth'
    })
   };
-  return (<>
+  return (
+  <>
     <section id="home" className="min-h-screen p-5 flex flex-col flex-wrap items-center justify-center bg-gradient-to-br from-black  to-black text-white">
       <div className="container w-[95%] mx-auto px-6 pt-20">
         <div className="flex  flex-col lg:flex-row items-center justify-between gap-12">
@@ -22,7 +23,7 @@ const Hero = () => {
               I am passionate web developer specializing in WordPress, PHP, React, and modern web technologies.
               I create beautiful, functional websites that deliver exceptional user experiences. I am also a ecommerce  expert. I developed website for attract more customers for your business.
             </p>
-            <p className=" gap-2 items-center md:justify-center flex">
+            <p className=" gap-2 items-center sm:justify-center flex">
               <span className="shadow-indicate  rounded-full flex"> </span>
               <span className="clients  text-center"> Clients: {clients}+</span>
           
