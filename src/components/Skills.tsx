@@ -1,25 +1,36 @@
+import Html from '@/assets/html-5.png'
+import css from '@/assets/css-3.png'
+import tailwind from '@/assets/apple-touch-icon.png'
+import JavaScript from '@/assets/js.png'
+import ReactJs from '@/assets/programing.png'
+import PHP from '@/assets/php.png'
+import mysql from '@/assets/mysql.png'
+import wordpress from '@/assets/wordpress.png'
+import elementor from '@/assets/5968699.png'
+import woo from '@/assets/woocommerce-icon-svgrepo-com.svg'
+import photoshop from '@/assets/photoshop.png'
+
 import {
   buildStyles,
   CircularProgressbar,
   CircularProgressbarWithChildren,
 } from "react-circular-progressbar";
-
-
 import "react-circular-progressbar/dist/styles.css";
+
 const Skills = () => {
   let skills = [
-    { name: "HTML/CSS", level: 92, color: "#f97316", tech: '/src/assets/html-5.png' },
-    { name: "CSS", level: 80, color: "#004ce8", tech: '/src/assets/css-3.png' },
-    { name: "TailwindCSS", level: 90, color: "#35bef8", tech: '/src/assets/apple-touch-icon.png' },
-    { name: "JavaScript", level: 88, color: "#ffdf00", tech: '/src/assets/js.png' },
-    { name: "React.js", level: 85, color: "#60b3f6", tech: '/src/assets/programing.png' },
-    { name: "PHP", level: 90, color: "#777bb3", tech: '/src/assets/php.png' },
-    { name: "MySQL", level: 80, color: "#16a34a", tech: '/src/assets/mysql.png' },
-    { name: "WordPress", level: 95, color: "#00769d", tech: '/src/assets/wordpress.png' },
+    { name: "HTML/CSS", level: 92, color: "#f97316", tech: 'src/assets/html-5.png' },
+    { name: "CSS", level: 80, color: "#004ce8", tech: 'src/assets/css-3.png' },
+    { name: "TailwindCSS", level: 90, color: "#35bef8", tech: 'src/assets/apple-touch-icon.png' },
+    { name: "JavaScript", level: 88, color: "#ffdf00", tech: 'src/assets/js.png' },
+    { name: "React.js", level: 85, color: "#60b3f6", tech: 'src/assets/programing.png' },
+    { name: "PHP", level: 90, color: "#777bb3", tech: 'src/assets/php.png' },
+    { name: "MySQL", level: 80, color: "#16a34a", tech: 'src/assets/mysql.png' },
+    { name: "WordPress", level: 95, color: "#00769d", tech: 'src/assets/wordpress.png' },
     // { name: "Laravel", level: 65, color: "#db2777", tech:'src/assets/html-5.png' },
-    { name: "Elementor", level: 92, color: "#ab003a",tech:'/src/assets/5968699.png' },
-    { name: "WooCommerce", level: 92, color: "#7f54b3",tech:'/src/assets/woocommerce-icon-svgrepo-com.svg' },
-    { name: "PhotoShop", level: 92, color: "#f97316",tech:'/src/assets/photoshop.png' },
+    { name: "Elementor", level: 92, color: "#ab003a",tech:'src/assets/5968699.png' },
+    { name: "WooCommerce", level: 92, color: "#7f54b3",tech:'src/assets/woocommerce-icon-svgrepo-com.svg' },
+    { name: "PhotoShop", level: 92, color: "#f97316",tech:'src/assets/photoshop.png' },
   ];
   let tools = [
     { name: "PhotoSho[", level: 92, color: "#f97316",tech:'src/assets/wordpress.png' },
@@ -66,8 +77,8 @@ const Skills = () => {
                 Technical Proficiency
               </h3> */}
 
-          <div className="grid bg-red-400  lg:grid-cols-2 gap-12 mb-1">
-            <div className="">
+          <div className="grid bg-white rounded-xl   lg:grid-cols-2 gap-12 mb-1">
+            <div className="p-3">
               <div className="space-y-6  m-auto  ">
               
 
@@ -86,11 +97,9 @@ const Skills = () => {
                 >
                   {skills.map((circle) => {
                     return (
-                      <div className="place-items-center" key={circle}>
+                      <div className="place-items-center p-1" key={circle}>
                         <CircularProgressbarWithChildren
-                          
-                          strokeWidth={6}
-                          
+                          strokeWidth={6}                          
                           maxValue={100}
                           minValue={1}
                           backgroundPadding={20}
@@ -98,8 +107,7 @@ const Skills = () => {
                             pathColor: circle.color,
                             trailColor: `${circle.color}2f`,
                           })}
-                          className="bg-white rounded-full"
-                          // text={`${circle.level}%  ${circle.name}`}
+                          className="bg-white m-auto rounded-full"
                           value={circle.level}
                         >
                           <p style={{ fontSize: '14px' }} className="text-center ">
@@ -108,7 +116,10 @@ const Skills = () => {
                                 <img height={50} alt={circle.name} src={circle.tech} />
                               </div>
                             </span>
+                              <span className="font-bold">
                               {circle.name}
+
+                              </span>
                             <span style={{color:circle.color}} className={`font-extrabold text-center text-xl mt-1 block`}>{circle.level}%</span>
                           </p>
                         </CircularProgressbarWithChildren>
