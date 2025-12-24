@@ -103,3 +103,16 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+span.shadow-indicate{
+  height: 5px;
+
+  width:  5px;
+  background: yellowgreen;
+  display: block;
+  box-shadow: 0 0 10px 5px rgb(170, 255, 0) ;
+  margin-left: 10px;
+}
+.clients{
+  gap: 0;
+}
