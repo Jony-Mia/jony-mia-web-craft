@@ -19,18 +19,18 @@ import "react-circular-progressbar/dist/styles.css";
 
 const Skills = () => {
   let skills = [
-    { name: "HTML/CSS", level: 92, color: "#f97316", tech: 'src/assets/html-5.png' },
-    { name: "CSS", level: 80, color: "#004ce8", tech: 'src/assets/css-3.png' },
-    { name: "TailwindCSS", level: 90, color: "#35bef8", tech: 'src/assets/apple-touch-icon.png' },
-    { name: "JavaScript", level: 88, color: "#ffdf00", tech: 'src/assets/js.png' },
-    { name: "React.js", level: 85, color: "#60b3f6", tech: 'src/assets/programing.png' },
-    { name: "PHP", level: 90, color: "#777bb3", tech: 'src/assets/php.png' },
-    { name: "MySQL", level: 80, color: "#16a34a", tech: 'src/assets/mysql.png' },
-    { name: "WordPress", level: 95, color: "#00769d", tech: 'src/assets/wordpress.png' },
+    { name: "HTML/CSS", level: 92, color: "#f97316", tech: Html },
+    { name: "CSS", level: 80, color: "#004ce8", tech: css },
+    { name: "TailwindCSS", level: 90, color: "#35bef8", tech: tailwind },
+    { name: "JavaScript", level: 88, color: "#ffdf00", tech: JavaScript },
+    { name: "React.js", level: 85, color: "#60b3f6", tech: ReactJs },
+    { name: "PHP", level: 90, color: "#777bb3", tech: PHP },
+    { name: "MySQL", level: 80, color: "#16a34a", tech: mysql },
+    { name: "WordPress", level: 95, color: "#00769d", tech: wordpress },
     // { name: "Laravel", level: 65, color: "#db2777", tech:'src/assets/html-5.png' },
-    { name: "Elementor", level: 92, color: "#ab003a",tech:'src/assets/5968699.png' },
-    { name: "WooCommerce", level: 92, color: "#7f54b3",tech:'src/assets/woocommerce-icon-svgrepo-com.svg' },
-    { name: "PhotoShop", level: 92, color: "#f97316",tech:'src/assets/photoshop.png' },
+    { name: "Elementor", level: 92, color: "#ab003a",tech: elementor },
+    { name: "WooCommerce", level: 92, color: "#7f54b3",tech:  woo },
+    { name: "PhotoShop", level: 92, color: "#f97316",tech: photoshop },
   ];
   let tools = [
     { name: "PhotoSho[", level: 92, color: "#f97316",tech:'src/assets/wordpress.png' },
