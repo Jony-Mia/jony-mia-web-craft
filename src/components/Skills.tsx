@@ -88,7 +88,7 @@ const Skills = () => {
                     position: "relative",
                     // height: 300,
                     display: "grid",
-                    gridTemplateColumns: "repeat(6,auto)",
+                    gridTemplateColumns: "repeat(5,auto)",
                     gap: " 10px",
                     margin: 'auto',
 
