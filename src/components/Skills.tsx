@@ -77,7 +77,7 @@ const Skills = () => {
                 Technical Proficiency
               </h3> */}
 
-          <div className="grid bg-white rounded-xl   lg:grid-cols-2 gap-12 mb-1">
+          <div className="grid bg-white rounded-xl hidden md:block hide-mob  lg:grid-cols-2 gap-12 mb-1">
             <div className="p-3">
               <div className="space-y-6  m-auto  ">
               
