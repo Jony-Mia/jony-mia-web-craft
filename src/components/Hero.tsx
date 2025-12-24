@@ -22,9 +22,9 @@ const Hero = () => {
               I am passionate web developer specializing in WordPress, PHP, React, and modern web technologies.
               I create beautiful, functional websites that deliver exceptional user experiences. I am also a ecommerce  expert. I developed website for attract more customers for your business.
             </p>
-            <p className=" gap-2 items-center  flex">
+            <p className=" gap-2 items-center md:justify-center flex">
               <span className="shadow-indicate  rounded-full flex"> </span>
-              <span className="clients"> Clients: {clients}+</span>
+              <span className="clients  text-center"> Clients: {clients}+</span>
           
             </p>
             <br />

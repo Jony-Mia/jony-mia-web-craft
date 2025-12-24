@@ -8,7 +8,7 @@ import mysql from '@/assets/mysql.png'
 import wordpress from '@/assets/wordpress.png'
 import elementor from '@/assets/5968699.png'
 import woo from '@/assets/woocommerce-icon-svgrepo-com.svg'
-import photoshop from '@/assets/photoshop.png'
+import typescript from '@/assets/typescript.png'
 
 import {
   buildStyles,
@@ -30,7 +30,7 @@ const Skills = () => {
     // { name: "Laravel", level: 65, color: "#db2777", tech:'src/assets/html-5.png' },
     { name: "Elementor", level: 92, color: "#ab003a",tech: elementor },
     { name: "WooCommerce", level: 92, color: "#7f54b3",tech:  woo },
-    { name: "PhotoShop", level: 92, color: "#f97316",tech: photoshop },
+    { name: "TypeScript", level: 92, color: "#3178c6",tech: typescript },
   ];
   let tools = [
     { name: "PhotoSho[", level: 92, color: "#f97316",tech:'src/assets/wordpress.png' },
@@ -135,7 +135,7 @@ const Skills = () => {
 
 
               {/* Mobile Menu */}
-          <div style={{  boxShadow:'0 0 5px gray'}} className="grid bg-white rounded-xl md-hidden  lg:grid-cols-2 gap-12 mb-1">
+          <div style={{  boxShadow:'0 0 5px gray'}} className="grid bg-white rounded-xl md:hidden  lg:grid-cols-2 gap-12 mb-1">
             <div className="p-2">
               <div className="  m-auto  ">
               
