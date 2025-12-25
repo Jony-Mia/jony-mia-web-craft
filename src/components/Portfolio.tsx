@@ -116,7 +116,7 @@ const Portfolio = () => {
       image: vitalix,
       technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
       category: "Landing Page",
-      link:"https://barakahpublication.shop/"
+      link:"https://vitalixbd.com/vitalix-bd-ananta"
     },
     {
       id: 11,
@@ -125,7 +125,7 @@ const Portfolio = () => {
       image: hudaway,
       technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
       category: "Landing Page",
-      link:"https://barakahpublication.shop/"
+      link:"https://hudawaybd.com"
     },
   ];
 
