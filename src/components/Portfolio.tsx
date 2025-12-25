@@ -8,6 +8,9 @@ import qibla from "@/assets/image1.png";
 import watch from "@/assets/image.png";
 import homely from '@/assets/Homely.png'
 import royal from '@/assets/royal.png'
+import vitalix from '@/assets/Vitalix-Ananta.png'
+import hudaway from '@/assets/hudaway.png'
+import BarakahBook from '@/assets/Barakah-Publication.png'
 import kidzPlaynix from '@/assets/Kids-Playnix.png'
 const Portfolio = () => {
   const projects = [
@@ -96,7 +99,34 @@ const Portfolio = () => {
       technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
       category: "WordPress Development",
       link:"https://royalparkattire.com/"
-    }
+    },
+    {
+      id: 10,
+      title: " Islamic  Book",
+      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
+      image: BarakahBook,
+      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
+      category: "Landing Page",
+      link:"https://barakahpublication.shop/"
+    },
+    {
+      id: 10,
+      title: " Vitalix Ananta",
+      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
+      image: vitalix,
+      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
+      category: "Landing Page",
+      link:"https://barakahpublication.shop/"
+    },
+    {
+      id: 11,
+      title: "  Hudaway BD  ",
+      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
+      image: hudaway,
+      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
+      category: "Landing Page",
+      link:"https://barakahpublication.shop/"
+    },
   ];
 
   return (
