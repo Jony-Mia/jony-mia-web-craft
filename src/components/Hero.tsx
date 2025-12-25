@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Facebook, Instagram, Linkedin, LinkedinIcon, Twitter, X, Youtube } from "lucide-react";
-const clients= 110;
+const clients= 2;
 const Hero = () => {
   const handlePortfolioClick = () => {
    document.getElementById('portfolio').scrollIntoView({
@@ -9,8 +9,9 @@ const Hero = () => {
   };
   return (
   <>
+  <div className="">Under Developemnet Progress</div>
     <section id="home" className="min-h-screen p-5 flex flex-col flex-wrap items-center justify-center bg-gradient-to-br from-black  to-black text-white">
-      <div className="container w-[95%] mx-auto px-6 pt-20">
+      <div className="container w-[85%] mx-auto px-6 pt-20">
         <div className="flex  flex-col lg:flex-row items-center justify-between gap-12">
           <div className="flex-1  self-center text-center lg:text-left">
             <h1 className="text-4xl  lg:text-6xl sm:text-2xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent ">
@@ -19,13 +20,13 @@ const Hero = () => {
             <h2 className="text-3xl md:text-2xl mt-[-20px] text-blue-200 mb-6 font-normal">
               Web Developer & Ecommerce Expert
             </h2>
-            <p className="text-lg lg:text-[18px] text-center text-gray-300 mb-8 max-w-2xl leading-snug">
+            <p className="text-lg lg:text-[18px] md:text-left text-center text-gray-300 mb-8 max-w-2xl leading-snug">
               I am passionate web developer specializing in WordPress, PHP, React, and modern web technologies.
               I create beautiful, functional websites that deliver exceptional user experiences. I am also a ecommerce  expert. I developed website for attract more customers for your business.
             </p>
-            <p className=" gap-2 items-center justify-center flex">
+            <p className=" gap-2 items-center md:justify-normal justify-center flex">
               <span className="shadow-indicate  rounded-full flex"> </span>
-              <span className="clients  text-center"> Clients: {clients}+</span>
+              <span className="clients  text-center"> Years: {clients}+</span>
           
             </p>
             <br />

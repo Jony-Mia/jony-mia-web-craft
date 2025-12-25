@@ -1,12 +1,14 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import babiesHavenPreview from "@/assets/babieshavenbd-preview.png";
-import fastitcarePreview from "@/assets/image2.png";
+import khalifafashion from "@/assets/Khalif-FashionWorld.png";
 import solutionbdPreview from "@/assets/image3.png";
 import perfume from "@/assets/image4.png";
 import qibla from "@/assets/image1.png";
 import watch from "@/assets/image.png";
-
+import homely from '@/assets/Homely.png'
+import royal from '@/assets/royal.png'
+import kidzPlaynix from '@/assets/Kids-Playnix.png'
 const Portfolio = () => {
   const projects = [
     {
@@ -18,14 +20,15 @@ const Portfolio = () => {
       category: "E-commerce Website",
       link: "https://babieshavenbd.com"
     },
+    
     {
       id: 2,
-      title: "FastIT Care",
-      description: "Professional web design service website with Bengali language support and modern UI",
-      image: fastitcarePreview,
-      technologies: ["WordPress", "Custom Design", "Multilingual", "Professional"],
+      title: "Khalifa Fashion",
+      description: "Ecommerce website for sale baby products",
+      image: khalifafashion,
+      technologies: ["WordPress", "Custom Design", "", "Professional"],
       category: "Web Design Services",
-      link: "https://fastitcare.com"
+      link: "https://khalifafashionworld.com/"
     },
     {
       id: 3,
@@ -61,11 +64,38 @@ const Portfolio = () => {
     {
       id: 6,
       title: "Landing Page for watch",
-      description: "Here I build a high qualityful landing page for my client business.",
+      description: "Today, a watch symbolize your passion,",
       image: watch,
       technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
       category: "WordPress Development",
       link:"https://orlolife.xyz"
+    },
+    {
+      id: 7,
+      title: "Bedsheet and Home Decor",
+      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
+      image: homely,
+      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
+      category: "WordPress Development",
+      link:"https://homely.com.bd"
+    },
+    {
+      id: 8,
+      title: "Bedsheet and Home Decor",
+      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
+      image: kidzPlaynix,
+      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
+      category: "WordPress Development",
+      link:"https://kidzplaynix.com/"
+    },
+    {
+      id: 9,
+      title: "Bedsheet and Home Decor",
+      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
+      image: royal,
+      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
+      category: "WordPress Development",
+      link:"https://royalparkattire.com/"
     }
   ];
 
