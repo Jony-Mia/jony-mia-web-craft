@@ -8,7 +8,11 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
+    <>
     <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div>
+      <p className="p-2 bg-red-500 text-center text-white">This website in under construction</p>
+    </div>
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-gray-900">
@@ -47,6 +51,7 @@ const Header = () => {
         )}
       </nav>
     </header>
+    </>
   );
 };
 
