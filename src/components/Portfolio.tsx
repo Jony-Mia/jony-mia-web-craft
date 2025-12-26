@@ -1,200 +1,136 @@
+import { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ExternalLink } from 'lucide-react';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import babiesHavenPreview from "@/assets/babieshavenbd-preview.png";
-import khalifafashion from "@/assets/Khalif-FashionWorld.png";
-import solutionbdPreview from "@/assets/image3.png";
-import perfume from "@/assets/image4.png";
-import qibla from "@/assets/image1.png";
-import watch from "@/assets/image.png";
-import homely from '@/assets/Homely.png'
-import royal from '@/assets/royal.png'
-import vitalix from '@/assets/Vitalix-Ananta.png'
-import hudaway from '@/assets/hudaway.png'
-import BarakahBook from '@/assets/Barakah-Publication.png'
-import kidzPlaynix from '@/assets/Kids-Playnix.png'
+gsap.registerPlugin(ScrollTrigger);
+
+type Category = 'all' | 'websites' | 'landing-pages';
+
+interface Project {
+  name: string;
+  url: string;
+  category: 'websites' | 'landing-pages';
+}
+
+const projects: Project[] = [
+  { name: 'Homely', url: 'https://homely.com.bd', category: 'websites' },
+  { name: 'Kidoz', url: 'https://kidoz.com.bd', category: 'websites' },
+  { name: 'Kids Playnix', url: 'https://kidzplaynix.com', category: 'websites' },
+  { name: 'Khalifa Fashion World', url: 'https://khalifafashionworld.com', category: 'websites' },
+  { name: 'Hudaway BD', url: 'https://hudawaybd.com', category: 'websites' },
+  { name: 'Divine Aroma BD', url: 'https://divinearomabd.com', category: 'websites' },
+  { name: 'Qiblaa', url: 'https://qiblaa.com', category: 'websites' },
+  { name: 'Babies Haven BD', url: 'https://babieshavenbd.com', category: 'websites' },
+  { name: 'Solution BD', url: 'https://solutionbd.top', category: 'websites' },
+  { name: 'Bismillah Cargo', url: 'https://bismillahcargo.com.bd', category: 'websites' },
+  { name: 'Rafaa Online', url: 'https://rafaaonline.com', category: 'websites' },
+  { name: 'Bismillah Nogor', url: 'https://bismillahnogor.com', category: 'websites' },
+  { name: 'Solution BD Landing', url: 'https://solutionbd.top', category: 'landing-pages' },
+  { name: 'Vitalix BD', url: 'https://vitalixbd.com/vitalix-bd-ananta', category: 'landing-pages' },
+  { name: 'Bismillah Nogor Landing', url: 'https://bismillahnogor.com', category: 'landing-pages' },
+  { name: 'Gopali Pitha', url: 'https://gopalipitha.com', category: 'landing-pages' },
+  { name: 'Chandura', url: 'https://chandura.com', category: 'landing-pages' },
+  { name: 'Trendy Book BD', url: 'https://trendybookbd.com', category: 'landing-pages' },
+  { name: 'Barakah Publication', url: 'https://barakahpublication.shop', category: 'landing-pages' },
+  { name: 'Masud Telecom BD', url: 'https://masudtelecombd.com', category: 'landing-pages' },
+  { name: 'Sakura Agency', url: 'https://www.sakura.agency', category: 'landing-pages' },
+  { name: 'Kids Dream Drape', url: 'https://kids.dreamdrapebd.com', category: 'landing-pages' },
+];
+
 const Portfolio = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "Babies Haven BD",
-      description: "Complete e-commerce solution for baby products with WooCommerce integration and custom design",
-      image: babiesHavenPreview,
-      technologies: ["WordPress", "WooCommerce", "PHP", "E-commerce"],
-      category: "E-commerce Website",
-      link: "https://babieshavenbd.com"
-    },
-    
-    {
-      id: 2,
-      title: "Khalifa Fashion",
-      description: "Ecommerce website for sale baby products",
-      image: khalifafashion,
-      technologies: ["WordPress", "Custom Design", "", "Professional"],
-      category: "Web Design Services",
-      link: "https://khalifafashionworld.com/"
-    },
-    {
-      id: 3,
-      title: "Solution BD",
-      description: "Health product e-commerce landing page specializing in hair loss treatment solutions with Minoxidil",
-      image: solutionbdPreview,
-      technologies: ["WordPress", "E-commerce", "Health Products", "Bengali"],
-      category: "Health E-commerce",
-      link: "https://solutionbd.top"
-    },
-    {
-    
-      id: 4,
-      title: "Ecommerce Website",
-      description: "Beautiful website with many features increasing user web experience.",
-      image: qibla,
-      technologies: ["WordPress", " Plugin", "PHP"],
-      category: "WordPress Development",
-      link: "https://qiblaa.com"
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [activeCategory, setActiveCategory] = useState<Category>('all');
 
-    },
-    
-    {
-      id: 5,
-      title: "Ecommerce Website",
-      description: "Complete e-commerce solution for perfumes and fragnants products with WooCommerce integration and custom design",
-      image: perfume,
-      technologies: ["WordPress", "WooCommerce","Woodmart"],
-      category: "Wordpress Development",
-      link: "https://divinearomabd.com"
+  const filteredProjects = activeCategory === 'all' 
+    ? projects 
+    : projects.filter(p => p.category === activeCategory);
 
-    },
-    {
-      id: 6,
-      title: "Landing Page for watch",
-      description: "Today, a watch symbolize your passion,",
-      image: watch,
-      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
-      category: "WordPress Development",
-      link:"https://orlolife.xyz"
-    },
-    {
-      id: 7,
-      title: "Bedsheet and Home Decor",
-      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
-      image: homely,
-      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
-      category: "WordPress Development",
-      link:"https://homely.com.bd"
-    },
-    {
-      id: 8,
-      title: "Bedsheet and Home Decor",
-      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
-      image: kidzPlaynix,
-      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
-      category: "WordPress Development",
-      link:"https://kidzplaynix.com/"
-    },
-    {
-      id: 9,
-      title: "Bedsheet and Home Decor",
-      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
-      image: royal,
-      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
-      category: "WordPress Development",
-      link:"https://royalparkattire.com/"
-    },
-    {
-      id: 10,
-      title: " Islamic  Book",
-      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
-      image: BarakahBook,
-      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
-      category: "Landing Page",
-      link:"https://barakahpublication.shop/"
-    },
-    {
-      id: 10,
-      title: " Vitalix Ananta",
-      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
-      image: vitalix,
-      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
-      category: "Landing Page",
-      link:"https://vitalixbd.com/vitalix-bd-ananta"
-    },
-    {
-      id: 11,
-      title: "  Hudaway BD  ",
-      description: "Bedsheet and pillows play very important role in your bed, now this time to personize with your choice.",
-      image: hudaway,
-      technologies: ["WordPress", "Custom Post Types", "PHP", "SEO Optimization"],
-      category: "Landing Page",
-      link:"https://hudawaybd.com"
-    },
-  ];
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        '.portfolio-content',
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
+    gsap.fromTo(
+      '.project-card',
+      { opacity: 0, scale: 0.9 },
+      { opacity: 1, scale: 1, duration: 0.4, stagger: 0.05 }
+    );
+  }, [activeCategory]);
 
   return (
-    <section id="portfolio" className="pb-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-              My Portfolio
-            </h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore some of my recent projects showcasing WordPress development, 
-              React applications, and custom web solutions
-            </p>
-          </div>
+    <section id="portfolio" ref={sectionRef} className="py-24">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16 portfolio-content">
+          <h2 className="section-title">
+            My <span className="text-gradient">Portfolio</span>
+          </h2>
+          <p className="section-subtitle">
+            A showcase of my best work and successful projects
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <Card 
-                key={project.id} 
-                className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-0 shadow-lg cursor-pointer"
-                onClick={() => project.link && window.open(project.link, '_blank')}
-              >
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-blue-600 text-white text-xs font-medium rounded-full">
-                      {project.category}
-                    </span>
-                  </div>
-                  {project.link && (
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full">
-                        <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 leading-relaxed">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, index) => (
-                      <span 
-                        key={index}
-                        className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        {/* Category Filters */}
+        <div className="flex justify-center gap-4 mb-12 portfolio-content">
+          {(['all', 'websites', 'landing-pages'] as Category[]).map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                activeCategory === category
+                  ? 'bg-gradient-primary text-primary-foreground'
+                  : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
+              }`}
+            >
+              {category === 'all' ? 'All Projects' : category === 'websites' ? 'Websites' : 'Landing Pages'}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredProjects.map((project) => (
+            <a
+              key={project.url}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card glass-card p-6 card-hover group"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <span className={`text-xs font-medium px-3 py-1 rounded-full ${
+                  project.category === 'websites' 
+                    ? 'bg-primary/20 text-primary' 
+                    : 'bg-accent/20 text-accent'
+                }`}>
+                  {project.category === 'websites' ? 'Website' : 'Landing Page'}
+                </span>
+                <ExternalLink size={18} className="text-muted-foreground group-hover:text-primary transition-colors" />
+              </div>
+              <h3 className="font-bold text-lg group-hover:text-primary transition-colors">
+                {project.name}
+              </h3>
+              <p className="text-muted-foreground text-sm mt-2 truncate">
+                {project.url.replace('https://', '')}
+              </p>
+            </a>
+          ))}
         </div>
       </div>
     </section>
