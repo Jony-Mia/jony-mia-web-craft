@@ -1,94 +1,172 @@
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Mail, Phone, MapPin, Send, Clock, Globe } from 'lucide-react';
 
-import { Button } from "@/components/ui/button";
-import { Mail, Phone } from "lucide-react";
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
-  const handleEmailClick = () => {
-    window.location.href = "mailto:ajonymia321@gmail.com";
-  };
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-  const handlePhoneClick = () => {
-    window.location.href = "tel:+8801770522886";
-  };
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        '.contact-content',
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+          },
+        }
+      );
+    }, sectionRef);
 
-  const handlePortfolioClick = () => {
-    window.location.href="#portfolio";
-  };
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-900 to-blue-900 text-white">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-8">
-            Let's Work Together
+    <section id="contact" ref={sectionRef} className="py-24 bg-secondary/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16 contact-content">
+          <h2 className="section-title">
+            Get In <span className="text-gradient">Touch</span>
           </h2>
-          <div className="w-24 h-1 bg-blue-400 mx-auto mb-12"></div>
-          
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your project 
-            and create something amazing together.
+          <p className="section-subtitle">
+            Have a project in mind? Let's discuss how I can help you
           </p>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/15 transition-all">
-              <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Email</h3>
-              <p className="text-gray-300 mb-4">ajonymia321@gmail.com</p>
-              <Button 
-                variant="outline" 
-                className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
-                onClick={handleEmailClick}
-              >
-                Send Email
-              </Button>
-            </div>
+        <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
+          {/* Contact Info */}
+          <div className="lg:col-span-2 contact-content">
+            <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+            <p className="text-muted-foreground mb-8">
+              Feel free to reach out to me through any of these channels. 
+              I'll get back to you as soon as possible!
+            </p>
 
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/15 transition-all">
-              <Phone className="w-12 h-12 text-green-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Phone</h3>
-              <p className="text-gray-300 mb-4">+8801770522886</p>
-              <Button 
-                variant="outline" 
-                className="border-green-400 text-green-400 hover:bg-green-400 hover:text-white"
-                onClick={handlePhoneClick}
-              >
-                Call Now
-              </Button>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/15 transition-all">
-              <div className="w-12 h-12 rounded-full overflow-hidden mx-auto mb-4 border-2 border-purple-400">
-                <img 
-                  src="/lovable-uploads/fda80385-0418-4962-a190-3156fe30c3fa.png" 
-                  alt="Jony Mia" 
-                  className="w-full h-full object-cover"
-                />
+            <div className="space-y-4">
+              <div className="professional-card p-4 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                  <Mail className="text-primary-foreground" size={22} />
+                </div>
+                <div>
+                  <p className="text-muted-foreground text-sm">Email</p>
+                  <a href="mailto:jony@example.com" className="font-semibold hover:text-primary transition-colors">
+                    jony@example.com
+                  </a>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Portfolio</h3>
-              <p className="text-gray-300 mb-4">jonymia.netlify.app</p>
-              <Button 
-                variant="outline" 
-                className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white"
-                onClick={handlePortfolioClick}
-              >
-                View Work
-              </Button>
+
+              <div className="professional-card p-4 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                  <Phone className="text-primary-foreground" size={22} />
+                </div>
+                <div>
+                  <p className="text-muted-foreground text-sm">Phone</p>
+                  <a href="tel:+8801XXXXXXXXX" className="font-semibold hover:text-primary transition-colors">
+                    +880 1XXX-XXXXXX
+                  </a>
+                </div>
+              </div>
+
+              <div className="professional-card p-4 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                  <MapPin className="text-primary-foreground" size={22} />
+                </div>
+                <div>
+                  <p className="text-muted-foreground text-sm">Location</p>
+                  <p className="font-semibold">Bangladesh</p>
+                </div>
+              </div>
+
+              <div className="professional-card p-4 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                  <Clock className="text-primary-foreground" size={22} />
+                </div>
+                <div>
+                  <p className="text-muted-foreground text-sm">Availability</p>
+                  <p className="font-semibold">Sun - Thu, 9AM - 6PM</p>
+                </div>
+              </div>
+
+              <div className="professional-card p-4 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                  <Globe className="text-primary-foreground" size={22} />
+                </div>
+                <div>
+                  <p className="text-muted-foreground text-sm">Response Time</p>
+                  <p className="font-semibold">Within 24 Hours</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
-            <h3 className="text-2xl font-semibold mb-6">Ready to Start Your Project?</h3>
-            <p className="text-gray-300 mb-6">
-              Whether you need a custom WordPress site, a React application, 
-              or PHP development, I'm here to help bring your vision to life.
-            </p>
-            <Button 
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
-              onClick={handleEmailClick}
-            >
-              Let's Discuss Your Project
-            </Button>
+          {/* Contact Form */}
+          <div className="lg:col-span-3 contact-content">
+            <div className="professional-card p-8">
+              <h3 className="text-xl font-bold mb-6">Send a Message</h3>
+              <form className="space-y-5">
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Full Name</label>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      className="w-full px-4 py-3.5 rounded-xl bg-secondary border-2 border-border focus:border-primary focus:outline-none transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Email Address</label>
+                    <input
+                      type="email"
+                      placeholder="your@email.com"
+                      className="w-full px-4 py-3.5 rounded-xl bg-secondary border-2 border-border focus:border-primary focus:outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      placeholder="+880 1XXX-XXXXXX"
+                      className="w-full px-4 py-3.5 rounded-xl bg-secondary border-2 border-border focus:border-primary focus:outline-none transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Subject</label>
+                    <input
+                      type="text"
+                      placeholder="Project Discussion"
+                      className="w-full px-4 py-3.5 rounded-xl bg-secondary border-2 border-border focus:border-primary focus:outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">Your Message</label>
+                  <textarea
+                    rows={5}
+                    placeholder="Tell me about your project, timeline, and budget..."
+                    className="w-full px-4 py-3.5 rounded-xl bg-secondary border-2 border-border focus:border-primary focus:outline-none transition-all resize-none"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="btn-primary w-full flex items-center justify-center gap-2 text-lg"
+                >
+                  Send Message <Send size={20} />
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

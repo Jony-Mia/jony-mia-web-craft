@@ -1,110 +1,106 @@
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Briefcase, Award, Users, Code } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-            About Me
-          </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-12"></div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-left">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-                WordPress Developer 
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                I'm Jony Mia, a passionate web developer specializing in WordPress development 
-                with extensive experience in creating custom themes, plugins, and dynamic websites. 
-                My expertise spans across modern web technologies including PHP, React, and JavaScript.
-              </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-               I developed websites for attract user to the website and improve user experience.
-              </p>
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                As a WordPress expert, I've built countless custom websites, e-commerce solutions, 
-                and complex web applications. I excel in custom theme development, plugin creation, 
-                WooCommerce customization, and performance optimization. My approach combines 
-                clean, maintainable code with user-centered design principles.
-              </p>
-              {/* <p className="text-gray-600 mb-6 leading-relaxed">
-                Beyond WordPress development, I'm also a skilled data entry specialist with expertise 
-                in accurate data processing, database management, and content organization. I provide 
-                reliable data entry services with attention to detail and quick turnaround times.
-              </p> */}
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                I'm proficient in React development, PHP programming, and modern frontend technologies. 
-                I believe in creating scalable, secure, and SEO-friendly solutions that deliver 
-                exceptional user experiences while maintaining data accuracy and integrity.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">WordPress Expert</span>
-                <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">PHP Developer</span>
-                <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">React Specialist</span>
-                <span className="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">WooCommerce Expert</span>
-                <span className="px-4 py-2 bg-blue-200 text-blue-800 rounded-full text-sm font-medium">Elementor</span>
-                <span className="px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium">Problem Solver</span>
+  const stats = [
+    { icon: Briefcase, value: '2+', label: t('hero.yearsExp') },
+    { icon: Award, value: '95+', label: t('hero.projects') },
+    { icon: Users, value: '50+', label: t('hero.clients') },
+    { icon: Code, value: '10+', label: t('about.technologies') },
+  ];
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        '.about-content',
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section id="about" ref={sectionRef} className="py-24 relative">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16 about-content">
+          <h2 className="section-title">
+            {t('about.title')} <span className="text-gradient">{t('about.me')}</span>
+          </h2>
+          <p className="section-subtitle">
+            {t('about.subtitle')}
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center about-content">
+          {/* About Text */}
+          <div className="glass-card p-8">
+            <h3 className="text-2xl font-bold mb-4 text-gradient">{t('about.whoAmI')}</h3>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              {t('about.description1')}
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              {t('about.description2')}
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              {t('about.description3')} <span className="text-primary font-semibold">Topper IT</span> {t('about.and')}
+              <span className="text-primary font-semibold"> Fast IT Care</span>{t('about.description4')}
+            </p>
+          </div>
+
+          {/* Stats Cards */}
+          <div className="grid grid-cols-2 gap-6">
+            {stats.map(({ icon: Icon, value, label }) => (
+              <div
+                key={label}
+                className="glass-card p-6 text-center card-hover"
+              >
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <Icon className="text-primary-foreground" size={28} />
+                </div>
+                <p className="text-3xl font-bold text-gradient mb-2">{value}</p>
+                <p className="text-muted-foreground text-sm">{label}</p>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Experience Timeline */}
+        <div className="mt-16 about-content">
+          <h3 className="text-2xl font-bold text-center mb-8">
+            {t('about.experience')} <span className="text-gradient">{t('about.experienceHighlight')}</span>
+          </h3>
+          <div className="max-w-2xl mx-auto">
+            <div className="glass-card p-6 mb-4 border-l-4 border-primary">
+              <h4 className="font-bold text-lg">{t('about.webDeveloper')}</h4>
+              <p className="text-primary mb-2">Fast IT Care</p>
+              <p className="text-muted-foreground text-sm">
+                {t('about.fastItDesc')}
+              </p>
             </div>
-            
-            <div className="space-y-6">
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">WordPress Expertise</h4>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-                    Custom Theme Development
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-                    Plugin Development & Customization
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-                    WooCommerce Development
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-                    WordPress Security & Optimization
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-                    Multisite & Complex Installations
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Technical Skills</h4>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                    Accurate Data Processing & Entry
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                    Database Management & Organization
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                    React.js & Modern JavaScript
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                    PHP & MySQL Development
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                    RESTful API Development
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                    Responsive Web Design
-                  </li>
-                </ul>
-              </div>
+            <div className="glass-card p-6 border-l-4 border-accent">
+              <h4 className="font-bold text-lg">{t('about.juniorWebDeveloper')}</h4>
+              <p className="text-accent mb-2">Topper IT</p>
+              <p className="text-muted-foreground text-sm">
+                {t('about.topperItDesc')}
+              </p>
             </div>
           </div>
         </div>

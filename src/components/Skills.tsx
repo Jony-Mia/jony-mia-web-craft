@@ -1,205 +1,149 @@
-import Html from '@/assets/html-5.png'
-import css from '@/assets/css-3.png'
-import tailwind from '@/assets/apple-touch-icon.png'
-import JavaScript from '@/assets/js.png'
-import ReactJs from '@/assets/programing.png'
-import PHP from '@/assets/php.png'
-import mysql from '@/assets/mysql.png'
-import wordpress from '@/assets/wordpress.png'
-import elementor from '@/assets/5968699.png'
-import woo from '@/assets/woocommerce-icon-svgrepo-com.svg'
-import typescript from '@/assets/typescript.png'
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import CircularProgress from './CircularProgress';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-import {
-  buildStyles,
-  CircularProgressbar,
-  CircularProgressbarWithChildren,
-} from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
+gsap.registerPlugin(ScrollTrigger);
+
+const skills = [
+  { name: 'WordPress', percentage: 95 },
+  { name: 'ReactJS', percentage: 88 },
+  { name: 'HTML', percentage: 98 },
+  { name: 'CSS', percentage: 95 },
+  { name: 'JavaScript', percentage: 90 },
+  { name: 'TypeScript', percentage: 85 },
+  { name: 'Tailwind CSS', percentage: 92 },
+  { name: 'PHP', percentage: 80 },
+  { name: 'MySQL', percentage: 78 },
+  { name: 'Elementor', percentage: 96 },
+  { name: 'WooCommerce', percentage: 92 },
+  { name: 'CartFlows', percentage: 88 },
+];
+
+const ExpertiseCard = ({ title, items, colorClass, borderColor }: { title: string; items: string[]; colorClass: string; borderColor: string }) => (
+  <div className={`professional-card p-6 card-hover border-2 ${borderColor}`}>
+    <h3 className={`text-xl font-bold mb-4 ${colorClass}`}>{title}</h3>
+    <ul className="space-y-2">
+      {items.map((item, index) => (
+        <li key={index} className="flex items-center gap-2 text-muted-foreground">
+          <span className={`w-2 h-2 rounded-full ${
+            colorClass === 'text-primary' ? 'bg-primary' : 
+            colorClass === 'text-accent' ? 'bg-accent' : 
+            'bg-neon-purple'
+          }`} />
+          {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 const Skills = () => {
-  let skills = [
-    { name: "HTML/CSS", level: 92, color: "#f97316", tech: Html },
-    { name: "CSS", level: 80, color: "#004ce8", tech: css },
-    { name: "TailwindCSS", level: 90, color: "#35bef8", tech: tailwind },
-    { name: "JavaScript", level: 88, color: "#ffdf00", tech: JavaScript },
-    { name: "React.js", level: 85, color: "#60b3f6", tech: ReactJs },
-    { name: "PHP", level: 90, color: "#777bb3", tech: PHP },
-    { name: "MySQL", level: 80, color: "#16a34a", tech: mysql },
-    { name: "WordPress", level: 95, color: "#00769d", tech: wordpress },
-    // { name: "Laravel", level: 65, color: "#db2777", tech:'src/assets/html-5.png' },
-    { name: "Elementor", level: 92, color: "#ab003a",tech: elementor },
-    { name: "WooCommerce", level: 92, color: "#7f54b3",tech:  woo },
-    { name: "TypeScript", level: 92, color: "#3178c6",tech: typescript },
-  ];
-  let tools = [
-    { name: "PhotoSho[", level: 92, color: "#f97316",tech:'src/assets/wordpress.png' },
-    { name: "Figma", level: 88, color: "#ebb207" },
-    { name: "Canva", level: 85, color: "#0891b2" },
-    { name: "Elementor", level: 90, color: "#9333ea" },
-    { name: "WooCommerce", level: 80, color: "#16a34a" },
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
+  const wordpressExpertise = [
+    t('wp.theme'),
+    t('wp.plugin'),
+    t('wp.elementor'),
+    t('wp.woo'),
+    t('wp.cartflows'),
+    t('wp.speed'),
+    t('wp.security'),
+    t('wp.seo'),
+    t('wp.responsive'),
+    t('wp.migration'),
   ];
 
-  const technologies = [
-    "WordPress",
-    "PHP",
-    "Laravel",
-    "React.js",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "MySQL",
-    "jQuery",
-    "Bootstrap",
-    "Tailwind CSS",
-    "Git",
-    "REST API",
-    "Theme Development"
+  const reactExpertise = [
+    t('react.hooks'),
+    t('react.router'),
+    t('react.state'),
+    t('react.ts'),
+    t('react.tailwind'),
+    t('react.api'),
+    t('react.components'),
+    t('react.performance'),
+    t('react.testing'),
+    t('react.build'),
   ];
+
+  const ecommerceExpertise = [
+    t('ecom.store'),
+    t('ecom.payment'),
+    t('ecom.product'),
+    t('ecom.inventory'),
+    t('ecom.shipping'),
+    t('ecom.funnel'),
+    t('ecom.cartflows'),
+    t('ecom.conversion'),
+    t('ecom.order'),
+    t('ecom.analytics'),
+  ];
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        '.skills-content',
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-              Skills & Expertise
-            </h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Here are the technologies and tools I work with to bring ideas to
-              life
-            </p>
-          </div>
+    <section id="skills" ref={sectionRef} className="py-24 bg-secondary/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16 skills-content">
+          <h2 className="section-title">
+            {t('skills.title')} <span className="text-gradient">{t('skills.titleHighlight')}</span>
+          </h2>
+          <p className="section-subtitle">
+            {t('skills.subtitle')}
+          </p>
+        </div>
 
-          {/* <h3 className="text-3xl self-center block text-center font-semibold text-gray-900 mb-8">
-                Technical Proficiency
-              </h3> */}
+        {/* Circular Progress Skills */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-20 skills-content">
+          {skills.map((skill) => (
+            <CircularProgress key={skill.name} name={skill.name} percentage={skill.percentage} />
+          ))}
+        </div>
 
-          <div className="grid bg-white rounded-xl hidden md:block hide-mob  lg:grid-cols-2 gap-12 mb-1">
-            <div className="p-3">
-              <div className="space-y-6  m-auto  ">
-              
-
-                <div
-                  style={{
-                    width: 1100,
-                    position: "relative",
-                    // height: 300,
-                    display: "grid",
-                    gridTemplateColumns: "repeat(5,auto)",
-                    gap: " 10px",
-                    margin: 'auto',
-
-                  }}
-                  className="container"
-                >
-                  {skills.map((circle) => {
-                    return (
-                      <div className="place-items-center p-1" key={circle}>
-                        <CircularProgressbarWithChildren
-                          strokeWidth={6}                          
-                          maxValue={100}
-                          minValue={1}
-                          backgroundPadding={20}
-                          styles={buildStyles({
-                            pathColor: circle.color,
-                            trailColor: `${circle.color}2f`,
-                          })}
-                          className="bg-white m-auto rounded-full"
-                          value={circle.level}
-                        >
-                          <p style={{ fontSize: '14px' }} className="text-center ">
-                            <span style={{ color: circle.color, fontWeight: 'bolder' }} >
-                              <div style={{ width: '35px',display:'flex', placeContent:'center',margin:'auto'}}>
-                                <img height={50} alt={circle.name} src={circle.tech} />
-                              </div>
-                            </span>
-                              <span className="font-bold">
-                              {circle.name}
-
-                              </span>
-                            <span style={{color:circle.color}} className={`font-extrabold text-center text-xl mt-1 block`}>{circle.level}%</span>
-                          </p>
-                        </CircularProgressbarWithChildren>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-
-          
-          </div>
-
-
-              {/* Mobile Menu */}
-          <div style={{  boxShadow:'0 0 5px gray'}} className="grid bg-white rounded-xl md:hidden  lg:grid-cols-2 gap-12 mb-1">
-            <div className="p-2">
-              <div className="  m-auto  ">
-              
-
-                <div
-                  style={{
-                    //width: 400,
-                    position: "relative",
-                    // height: 300,
-                    display: "grid",
-                    gridTemplateColumns: "repeat(3,auto)",
-                    gap: " 10px",
-                    margin: 'auto',
-                  
-
-                  }}
-                  className="p-1"
-                >
-                  {skills.map((circle) => {
-                    return (
-                      <div className="place-content-center" key={circle}>
-                        <CircularProgressbarWithChildren
-                          
-                          strokeWidth={6}
-                          
-                          maxValue={100}
-                          minValue={1}
-                          backgroundPadding={20}
-                          styles={buildStyles({
-                            pathColor: circle.color,
-                            trailColor: `${circle.color}2f`,
-                          })}
-                          className="bg-white rounded-full"
-                          // text={`${circle.level}%  ${circle.name}`}
-                          value={circle.level}
-                        >
-                          <p style={{ fontSize: '14px' }} className="text-center ">
-                            <span style={{ color: circle.color, fontWeight: 'bolder' }} >
-                              <div style={{ width: '25px',display:'flex', placeContent:'center',margin:'auto'}}>
-                                <img height={50} src={circle.tech} />
-                              </div>
-                            </span>
-                              {circle.name}
-                            <span style={{color:circle.color}} className={`font-extrabold text-center text-md mt-1 block`}>{circle.level}%</span>
-                          </p>
-                        </CircularProgressbarWithChildren>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-
-          
-          </div>
+        {/* Expertise Cards */}
+        <div className="grid md:grid-cols-3 gap-8 skills-content">
+          <ExpertiseCard
+            title={t('skills.wordpress')}
+            items={wordpressExpertise}
+            colorClass="text-primary"
+            borderColor="border-primary/30 hover:border-primary"
+          />
+          <ExpertiseCard
+            title={t('skills.react')}
+            items={reactExpertise}
+            colorClass="text-accent"
+            borderColor="border-accent/30 hover:border-accent"
+          />
+          <ExpertiseCard
+            title={t('skills.ecommerce')}
+            items={ecommerceExpertise}
+            colorClass="text-neon-purple"
+            borderColor="border-neon-purple/30 hover:border-neon-purple"
+          />
         </div>
       </div>
-
-
-
-
-
-
- 
     </section>
   );
 };
