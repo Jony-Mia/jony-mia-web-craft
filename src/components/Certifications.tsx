@@ -2,10 +2,9 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import certificate1 from '@/assets/certificate-1.jpeg';
-<<<<<<< HEAD
-=======
+
 import certificate2 from '@/assets/certificate-2.jpeg';
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,9 +13,7 @@ const certificates = [
     title: 'Complete Web Development',
     issuer: 'Programming Hero',
     image: certificate1,
-<<<<<<< HEAD
-    year: '2024',
-=======
+
     year: '2025',
   },
   {
@@ -24,7 +21,6 @@ const certificates = [
     issuer: 'Programming Hero',
     image: certificate2,
     year: '2023',
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
   },
   // Add more certificates here
 ];
@@ -69,27 +65,24 @@ const Certifications = () => {
             <div key={index} className="relative group">
               {/* Glowing Neon Border Animation */}
               <div className="absolute -inset-2 bg-gradient-to-r from-primary via-neon-purple to-accent rounded-2xl opacity-75 blur-lg group-hover:opacity-100 transition-opacity duration-500 animate-pulse-glow" />
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-neon-purple to-accent rounded-2xl opacity-50" style={{ animation: 'certificate-rotate 4s linear infinite' }} />
+              {/* <div className="absolute -inset-1 bg-gradient-to-r from-primary via-neon-purple to-accent rounded-2xl opacity-50" style={{ animation: 'certificate-rotate 4s linear infinite' }} /> */}
               
-<<<<<<< HEAD
+
               <div className="relative glass-card p-2 rounded-2xl overflow-hidden shadow-xl">
-=======
-              <div className="relative glass-card p-2 rounded-2xl overflow-hidden">
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+            
                 <img
                   src={cert.image}
                   alt={cert.title}
                   className="w-80 md:w-96 h-auto rounded-xl"
                 />
-<<<<<<< HEAD
+
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-card via-card/90 to-transparent p-4">
                   <h3 className="font-bold text-lg text-card-foreground">{cert.title}</h3>
                   <p className="text-primary text-sm font-medium">{cert.issuer} • {cert.year}</p>
-=======
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/80 to-transparent p-4">
                   <h3 className="font-bold text-lg">{cert.title}</h3>
                   <p className="text-primary text-sm">{cert.issuer} • {cert.year}</p>
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
                 </div>
               </div>
             </div>
