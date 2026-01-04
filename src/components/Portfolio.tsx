@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import {useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -18,7 +18,7 @@ import royal from '@/assets/royal.png'
 gsap.registerPlugin(ScrollTrigger);
 
 type Category = 'all' | 'Website' | 'landing-pages';
-=======
+
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -27,13 +27,12 @@ import { ExternalLink } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 type Category = 'all' | 'websites' | 'landing-pages';
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
 
 interface Project {
   name: string;
   url: string;
   category: 'websites' | 'landing-pages';
-<<<<<<< HEAD
+
   image: string;
 }
 
@@ -169,7 +168,7 @@ const projects: Project[] = [
     url: 'https://kids.dreamdrapebd.com',
     category: 'landing-pages', 
     image: 'https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?w=400&h=250&fit=crop' },
-=======
+
 }
 
 const projects: Project[] = [
@@ -195,7 +194,7 @@ const projects: Project[] = [
   { name: 'Masud Telecom BD', url: 'https://masudtelecombd.com', category: 'landing-pages' },
   { name: 'Sakura Agency', url: 'https://www.sakura.agency', category: 'landing-pages' },
   { name: 'Kids Dream Drape', url: 'https://kids.dreamdrapebd.com', category: 'landing-pages' },
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
 ];
 
 const Portfolio = () => {
@@ -254,16 +253,16 @@ const Portfolio = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category
-<<<<<<< HEAD
+
                   ? 'bg-gradient-primary text-primary-foreground shadow-lg'
                   : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
               }`}
               style={activeCategory === category ? { boxShadow: 'var(--shadow-glow)' } : {}}
-=======
+
                   ? 'bg-gradient-primary text-primary-foreground'
                   : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
               }`}
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
             >
               {category === 'all' ? 'All Projects' : category === 'websites' ? 'Websites' : 'Landing Pages'}
             </button>
@@ -274,7 +273,7 @@ const Portfolio = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredProjects.map((project) => (
             <a
-<<<<<<< HEAD
+
               key={project.url + project.name}
               href={project.url}
               target="_blank"
@@ -308,7 +307,7 @@ const Portfolio = () => {
                   {project.url.replace('https://', '')}
                 </p>
               </div>
-=======
+]
               key={project.url}
               href={project.url}
               target="_blank"
@@ -331,7 +330,7 @@ const Portfolio = () => {
               <p className="text-muted-foreground text-sm mt-2 truncate">
                 {project.url.replace('https://', '')}
               </p>
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
             </a>
           ))}
         </div>
