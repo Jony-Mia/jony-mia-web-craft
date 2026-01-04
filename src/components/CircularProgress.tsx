@@ -4,7 +4,6 @@ interface CircularProgressProps {
   percentage: number;
   name: string;
   size?: number;
-<<<<<<< HEAD
   color?: string;
 }
 
@@ -28,10 +27,7 @@ const getGradientColors = (name: string): { start: string; end: string } => {
   return colorMap[name] || { start: 'hsl(200, 100%, 50%)', end: 'hsl(145, 80%, 45%)' };
 };
 
-=======
-}
 
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
 const CircularProgress = ({ percentage, name, size = 120 }: CircularProgressProps) => {
   const [currentPercentage, setCurrentPercentage] = useState(0);
   const circleRef = useRef<HTMLDivElement>(null);
@@ -40,11 +36,9 @@ const CircularProgress = ({ percentage, name, size = 120 }: CircularProgressProp
   const radius = (size - strokeWidth) / 2;
   const circumference = radius * 2 * Math.PI;
   const offset = circumference - (currentPercentage / 100) * circumference;
-<<<<<<< HEAD
+
   const colors = getGradientColors(name);
   const gradientId = `gradient-${name.replace(/\s+/g, '-')}`;
-=======
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -98,17 +92,14 @@ const CircularProgress = ({ percentage, name, size = 120 }: CircularProgressProp
             cy={size / 2}
             r={radius}
             fill="none"
-<<<<<<< HEAD
             stroke={`url(#${gradientId})`}
-=======
             stroke="url(#gradient)"
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
             strokeWidth={strokeWidth}
             strokeLinecap="round"
             strokeDasharray={circumference}
             strokeDashoffset={offset}
             className="transition-all duration-300"
-<<<<<<< HEAD
+
             style={{ filter: `drop-shadow(0 0 6px ${colors.start})` }}
           />
           {/* Gradient definition */}
@@ -116,29 +107,24 @@ const CircularProgress = ({ percentage, name, size = 120 }: CircularProgressProp
             <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor={colors.start} />
               <stop offset="100%" stopColor={colors.end} />
-=======
           />
           {/* Gradient definition */}
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="hsl(175, 85%, 50%)" />
               <stop offset="100%" stopColor="hsl(145, 80%, 50%)" />
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
             </linearGradient>
           </defs>
         </svg>
         {/* Percentage text */}
         <div className="absolute inset-0 flex items-center justify-center">
-<<<<<<< HEAD
           <span 
             className="text-2xl font-bold"
             style={{ color: colors.start }}
           >
             {currentPercentage}%
           </span>
-=======
           <span className="text-2xl font-bold text-gradient">{currentPercentage}%</span>
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
         </div>
       </div>
       <p className="mt-3 text-sm font-medium text-center">{name}</p>
