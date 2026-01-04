@@ -51,7 +51,7 @@ const Sponsors = () => {
             <div
               key={sponsor.name}
               className="sponsor-logo w-20 h-12 md:w-24 md:h-14 flex items-center justify-center opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 dark:invert-0"
-             className="sponsor-logo w-20 h-12 md:w-24 md:h-14 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+             {/* className="sponsor-logo w-20 h-12 md:w-24 md:h-14 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" */}
          >
               <img
                 src={sponsor.logo}
