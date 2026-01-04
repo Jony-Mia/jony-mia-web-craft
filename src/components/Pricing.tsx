@@ -108,11 +108,11 @@ const Pricing = () => {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-<<<<<<< HEAD
+
                   <span className="bg-gradient-primary text-white text-sm font-semibold px-4 py-1 rounded-full flex items-center gap-1 shadow-md">
-=======
-                  <span className="bg-gradient-primary text-primary-foreground text-sm font-semibold px-4 py-1 rounded-full flex items-center gap-1">
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
+                  {/* <span className="bg-gradient-primary text-primary-foreground text-sm font-semibold px-4 py-1 rounded-full flex items-center gap-1"> */}
+
                     <Star size={14} /> Most Popular
                   </span>
                 </div>
@@ -140,13 +140,13 @@ const Pricing = () => {
                 onClick={scrollToContact}
                 className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
                   plan.popular
-<<<<<<< HEAD
+
                     ? 'bg-gradient-primary text-white hover:shadow-glow'
                     : 'bg-secondary text-secondary-foreground hover:bg-primary hover:text-white'
-=======
-                    ? 'bg-gradient-primary text-primary-foreground hover:shadow-glow'
-                    : 'bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground'
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
+                    // ? 'bg-gradient-primary text-primary-foreground hover:shadow-glow'
+                    // : 'bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground'
+
                 }`}
               >
                 Get Started
