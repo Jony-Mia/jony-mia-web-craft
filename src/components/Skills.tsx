@@ -21,8 +21,8 @@ const skills = [
   { name: 'CartFlows', percentage: 88 },
 ];
 
-<<<<<<< HEAD
-const ExpertiseCard = ({ title, items, colorClass, borderColor }: { title: string; items: string[]; colorClass: string; borderColor: string }) => (
+
+{/* const ExpertiseCard = ({ title, items, colorClass, borderColor }: { title: string; items: string[]; colorClass: string; borderColor: string }) => (
   <div className={`professional-card p-6 card-hover border-2 ${borderColor}`}>
     <h3 className={`text-xl font-bold mb-4 ${colorClass}`}>{title}</h3>
     <ul className="space-y-2">
@@ -32,8 +32,8 @@ const ExpertiseCard = ({ title, items, colorClass, borderColor }: { title: strin
             colorClass === 'text-primary' ? 'bg-primary' : 
             colorClass === 'text-accent' ? 'bg-accent' : 
             'bg-neon-purple'
-          }`} />
-=======
+          }`} /> */}
+
 const ExpertiseCard = ({ title, items, color }: { title: string; items: string[]; color: string }) => (
   <div className="glass-card p-6 card-hover">
     <h3 className={`text-xl font-bold mb-4 ${color}`}>{title}</h3>
@@ -41,7 +41,8 @@ const ExpertiseCard = ({ title, items, color }: { title: string; items: string[]
       {items.map((item, index) => (
         <li key={index} className="flex items-center gap-2 text-muted-foreground">
           <span className={`w-2 h-2 rounded-full ${color === 'text-gradient' ? 'bg-primary' : color === 'text-accent' ? 'bg-accent' : 'bg-neon-purple'}`} />
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
+          
           {item}
         </li>
       ))}
@@ -137,32 +138,25 @@ const Skills = () => {
           <ExpertiseCard
             title={t('skills.wordpress')}
             items={wordpressExpertise}
-<<<<<<< HEAD
             colorClass="text-primary"
             borderColor="border-primary/30 hover:border-primary"
-=======
             color="text-gradient"
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
           />
           <ExpertiseCard
             title={t('skills.react')}
             items={reactExpertise}
-<<<<<<< HEAD
+
             colorClass="text-accent"
             borderColor="border-accent/30 hover:border-accent"
-=======
             color="text-accent"
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
           />
           <ExpertiseCard
             title={t('skills.ecommerce')}
             items={ecommerceExpertise}
-<<<<<<< HEAD
             colorClass="text-neon-purple"
             borderColor="border-neon-purple/30 hover:border-neon-purple"
-=======
             color="text-neon-purple"
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
           />
         </div>
       </div>
