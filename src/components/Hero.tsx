@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-<<<<<<< HEAD
+
 import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import profileImage from '@/assets/profile.png';
@@ -32,7 +32,7 @@ const socialLinks = [
   { icon: Youtube, href: '#', label: 'YouTube', colorClass: 'social-youtube' },
   { CustomIcon: TikTokIcon, href: '#', label: 'TikTok', colorClass: 'social-tiktok' },
   { CustomIcon: ThreadsIcon, href: '#', label: 'Threads', colorClass: 'social-threads' },
-=======
+
 import { Facebook, Instagram, Linkedin, Youtube, Twitter } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import profileImage from '@/assets/profile.png';
@@ -43,7 +43,7 @@ const socialLinks = [
   { icon: Linkedin, href: '#', label: 'LinkedIn' },
   { icon: Twitter, href: '#', label: 'X (Twitter)' },
   { icon: Youtube, href: '#', label: 'YouTube' },
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
 ];
 
 const Hero = () => {
@@ -134,26 +134,26 @@ const Hero = () => {
             </div>
 
             {/* Social Links */}
-<<<<<<< HEAD
+
             <div className="flex flex-wrap gap-3">
               {socialLinks.map(({ icon: Icon, CustomIcon, href, label, colorClass }) => (
-=======
+
             <div className="flex gap-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-<<<<<<< HEAD
+
                   className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${colorClass}`}
                 >
                   {Icon ? <Icon size={20} /> : CustomIcon && <CustomIcon />}
-=======
+
                   className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 >
                   <Icon size={20} />
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
                 </a>
               ))}
             </div>
