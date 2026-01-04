@@ -3,19 +3,16 @@ import {
   Instagram, 
   Linkedin, 
   Youtube, 
-<<<<<<< HEAD
-=======
-  Twitter,
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
   Mail,
   Phone,
+  Twitter,
   MapPin,
   Heart,
   ArrowUp
 } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
-<<<<<<< HEAD
+
 // Custom icons
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -43,14 +40,14 @@ const socialLinks = [
   { icon: Youtube, href: '#', label: 'YouTube', colorClass: 'social-youtube' },
   { CustomIcon: TikTokIcon, href: '#', label: 'TikTok', colorClass: 'social-tiktok' },
   { CustomIcon: ThreadsIcon, href: '#', label: 'Threads', colorClass: 'social-threads' },
-=======
+
 const socialLinks = [
   { icon: Facebook, href: '#', label: 'Facebook' },
   { icon: Instagram, href: '#', label: 'Instagram' },
   { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'X (Twitter)' },
+  /* { icon: Twitter, href: '#', label: 'X (Twitter)' }, */
   { icon: Youtube, href: '#', label: 'YouTube' },
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
 ];
 
 const quickLinks = [
@@ -84,27 +81,24 @@ const Footer = () => {
               Professional Web Developer specializing in WordPress, React, 
               and modern web technologies. Let's build something amazing together.
             </p>
-<<<<<<< HEAD
-            <div className="flex flex-wrap gap-2">
+           <div className="flex flex-wrap gap-2">
               {socialLinks.map(({ icon: Icon, CustomIcon, href, label, colorClass }) => (
-=======
-            <div className="flex gap-3">
-              {socialLinks.map(({ icon: Icon, href, label }) => (
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
+
+            // <div className="flex gap-3">
+            //   {socialLinks.map(({ icon: Icon, href, label }) => (
+
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-<<<<<<< HEAD
-                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${colorClass}`}
+                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${colorClass}`}
                 >
                   {Icon ? <Icon size={18} /> : CustomIcon && <CustomIcon />}
-=======
+
                   className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 >
                   <Icon size={18} />
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
-                </a>
+               </a>
               ))}
             </div>
           </div>
@@ -144,7 +138,6 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-6">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-muted-foreground">
-<<<<<<< HEAD
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                   <Mail size={18} className="text-primary" />
                 </div>
@@ -160,8 +153,7 @@ const Footer = () => {
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                   <MapPin size={18} className="text-primary" />
                 </div>
-=======
-                <Mail size={18} className="text-primary" />
+              <Mail size={18} className="text-primary" />
                 <span>jony@example.com</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
@@ -170,8 +162,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <MapPin size={18} className="text-primary" />
->>>>>>> 2885f632fd8de9fbd7e0409bef73fcfc2b54fc27
-                <span>Bangladesh</span>
+              <span>Bangladesh</span>
               </li>
             </ul>
           </div>
